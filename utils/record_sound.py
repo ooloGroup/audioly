@@ -10,11 +10,15 @@ CHUNK = int(os.environ.get("CHUNK"))
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
-INDEX=2
+INDEX = 2
 RECORD_SECONDS = int(os.environ.get("RECORD_SECONDS"))
 WAVE_OUTPUT_FILENAME = os.environ.get("WAVE_OUTPUT_FILENAME")
 
 p = pyaudio.PyAudio()
+for i in range(p.get_device_count()):
+        dev = p.get_device_info_by_index(i)
+        print((i, dev['name'], dev['maxInputChannels']))
+
 # print(p.get_default_input_device_info()) # index value is shown here
 
 stream = p.open(format=FORMAT,
@@ -29,8 +33,8 @@ print("* recording")
 frames = []
 
 for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-    data = stream.read(CHUNK)
-    frames.append(data)
+        data = stream.read(CHUNK)
+        frames.append(data)
 
 print("* done recording")
 
