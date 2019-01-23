@@ -2,7 +2,9 @@
 
 import pyaudio
 import wave
-
+from dotenv import find_dotenv
+from dotenv import load_dotenv
+load_dotenv(find_dotenv(), override=True)
 import os
 CHUNK = os.environ.get("CHUNK")
 print(CHUNK)
