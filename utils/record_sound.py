@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv(find_dotenv(), override=True)
 import os
 CHUNK = int(os.environ.get("CHUNK"))
-FORMAT = eval(os.environ.get("FORMAT"))
+FORMAT = pyaudio.paInt16
 CHANNELS = int(os.environ.get("CHANNELS"))
 RATE = int(os.environ.get("RATE"))
 RECORD_SECONDS = int(os.environ.get("RECORD_SECONDS"))
