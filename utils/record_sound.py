@@ -14,6 +14,7 @@ RECORD_SECONDS = int(os.environ.get("RECORD_SECONDS"))
 WAVE_OUTPUT_FILENAME = os.environ.get("WAVE_OUTPUT_FILENAME")
 
 p = pyaudio.PyAudio()
+print(p.get_default_input_device_info())
 
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,
