@@ -6,10 +6,10 @@ from dotenv import find_dotenv
 from dotenv import load_dotenv
 load_dotenv(find_dotenv(), override=True)
 import os
-CHUNK = int(os.environ.get("CHUNK"))
+CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
-RATE = 48000
+RATE = 44100
 INDEX = 2
 RECORD_SECONDS = int(os.environ.get("RECORD_SECONDS"))
 WAVE_OUTPUT_FILENAME = os.environ.get("WAVE_OUTPUT_FILENAME")
