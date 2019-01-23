@@ -9,6 +9,8 @@ import os
 CHUNK = int(os.environ.get("CHUNK"))
 FORMAT = pyaudio.paInt16
 CHANNELS = int(os.environ.get("CHANNELS"))
+print(CHANNELS)
+CHANNELS = 1
 RATE = int(os.environ.get("RATE"))
 RECORD_SECONDS = int(os.environ.get("RECORD_SECONDS"))
 WAVE_OUTPUT_FILENAME = os.environ.get("WAVE_OUTPUT_FILENAME")
