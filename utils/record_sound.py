@@ -9,7 +9,7 @@ import os
 CHUNK = int(os.environ.get("CHUNK"))
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
-RATE = 44100
+RATE = 48000
 INDEX = 2
 RECORD_SECONDS = int(os.environ.get("RECORD_SECONDS"))
 WAVE_OUTPUT_FILENAME = os.environ.get("WAVE_OUTPUT_FILENAME")
@@ -24,8 +24,8 @@ for i in range(p.get_device_count()):
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
-                input=True,
                 input_device_index=INDEX,
+                input=True,
                 frames_per_buffer=CHUNK)
 
 print("* recording")
