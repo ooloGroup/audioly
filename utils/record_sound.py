@@ -21,7 +21,7 @@ stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
                 input=True,
-                index=INDEX,
+                input_device_index=INDEX,
                 frames_per_buffer=CHUNK)
 
 print("* recording")
