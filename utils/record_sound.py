@@ -6,11 +6,11 @@ from dotenv import find_dotenv
 from dotenv import load_dotenv
 load_dotenv(find_dotenv(), override=True)
 import os
-CHUNK = os.environ.get("CHUNK")
-FORMAT = os.environ.get("FORMAT")
-CHANNELS = os.environ.get("CHANNELS")
-RATE = os.environ.get("RATE")
-RECORD_SECONDS = os.environ.get("RECORD_SECONDS")
+CHUNK = int(os.environ.get("CHUNK"))
+FORMAT = eval(os.environ.get("FORMAT"))
+CHANNELS = int(os.environ.get("CHANNELS"))
+RATE = int(os.environ.get("RATE"))
+RECORD_SECONDS = int(os.environ.get("RECORD_SECONDS"))
 WAVE_OUTPUT_FILENAME = os.environ.get("WAVE_OUTPUT_FILENAME")
 
 p = pyaudio.PyAudio()
